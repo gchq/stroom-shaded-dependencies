@@ -1,0 +1,19 @@
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    publishing {
+        publications {
+            thing1(MavenPublication) {
+                from components.shadow
+            }
+        }
+    }
+
+}
