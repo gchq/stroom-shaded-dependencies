@@ -20,7 +20,11 @@ task sourceJar(type: Jar){
 }
 
 dependencies {
-    compile 'org.apache.hadoop:hadoop-common:2.6.4'
+    compile('org.apache.hadoop:hadoop-common:2.6.4') {
+        exclude(module: 'slf4j-api')
+        exclude(module: 'slf4j-log4j12')
+        exclude(module: 'log4j')
+    }
 }
 
 publishing {
